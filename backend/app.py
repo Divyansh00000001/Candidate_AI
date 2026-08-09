@@ -18,6 +18,7 @@ app = FastAPI(
 
 origins = [
     "http://localhost:5173",
+    "https://candidate-ai-blush.vercel.app",
 ]
 
 
