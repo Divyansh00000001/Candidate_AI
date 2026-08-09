@@ -1,8 +1,10 @@
 const API_URL =
     import.meta.env.VITE_API_URL || "http://localhost:8000";
-    
+
+
 export async function askQuestion(question) {
-    const response = await fetch(`${BASE_URL}/chat`, {
+
+    const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -19,14 +21,16 @@ export async function askQuestion(question) {
     return response.json();
 }
 
+
 export async function streamQuestion(question, onChunk) {
-    const response = await fetch("http://127.0.0.1:8000/chat/stream", {
+
+    const response = await fetch(`${API_URL}/chat/stream`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            question: question,
+            question,
         }),
     });
 
@@ -42,6 +46,7 @@ export async function streamQuestion(question, onChunk) {
     const decoder = new TextDecoder();
 
     while (true) {
+
         const { value, done } = await reader.read();
 
         if (done) {
@@ -54,7 +59,6 @@ export async function streamQuestion(question, onChunk) {
 
         if (!chunk) continue;
 
-        // Display the chunk character by character
         for (const character of chunk) {
 
             onChunk(character);
@@ -62,27 +66,30 @@ export async function streamQuestion(question, onChunk) {
             await new Promise((resolve) =>
                 setTimeout(resolve, 20)
             );
+
         }
     }
 }
 
+
 export async function getCandidate() {
 
     const response = await fetch(
-        "http://127.0.0.1:8000/candidate"
+        `${API_URL}/candidate`
     );
 
     if (!response.ok) {
         throw new Error("Failed to load candidate data.");
     }
 
-    return await response.json();
+    return response.json();
 }
+
 
 export async function analyzeJobMatch(jobDescription) {
 
     const response = await fetch(
-        "http://127.0.0.1:8000/job-match",
+        `${API_URL}/job-match`,
         {
             method: "POST",
             headers: {
@@ -98,5 +105,5 @@ export async function analyzeJobMatch(jobDescription) {
         throw new Error("Failed to analyze job match.");
     }
 
-    return await response.json();
+    return response.json();
 }
