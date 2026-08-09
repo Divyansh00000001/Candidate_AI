@@ -1,11 +1,9 @@
-import json
-
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
+from groq import RateLimitError
 
 from models.chat import JobMatchRequest, JobMatchResponse
 from services.candidate import load_candidate
 from services.llm import analyze_job_match
-
 
 router = APIRouter()
 
@@ -15,14 +13,23 @@ def job_match(request: JobMatchRequest):
 
     candidate = load_candidate()
 
-    result = analyze_job_match(
-        candidate,
-        request.job_description
-    )
+    try:
 
-    return JobMatchResponse(
-        match_score=result["match_score"],
-        matching_skills=result["matching_skills"],
-        missing_skills=result["missing_skills"],
-        recommendation=result["recommendation"]
-    )
+        result = analyze_job_match(
+            candidate,
+            request.job_description
+        )
+
+        return JobMatchResponse(
+            match_score=result["match_score"],
+            matching_skills=result["matching_skills"],
+            missing_skills=result["missing_skills"],
+            recommendation=result["recommendation"]
+        )
+
+    except RateLimitError:
+
+        raise HTTPException(
+            status_code=429,
+            detail="AI service rate limit reached. Please try again later."
+        )
