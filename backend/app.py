@@ -9,7 +9,10 @@ from models.job_match import router as job_match_router
 
 app = FastAPI(
     title="Candidate AI",
-    version="1.0.0"
+    version="1.0.0",
+    openapi_url="/openapi.json",
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
 
 
