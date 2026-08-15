@@ -94,7 +94,7 @@ export default function Sidebar({
 </button>
 
                     <a
-    href="/resume/Divyansh_Chauhan_Resume01.pdf"
+    href="/resume/Divyansh_Chauhan_Resume.pdf"
     download="Divyansh_Chauhan_Resume.pdf"
     className="block w-full text-left px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-gray-800"
 >
