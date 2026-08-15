@@ -122,11 +122,10 @@ export default function ChatArea({
                                     "Java",
                                     "Python",
                                     "Django",
-                                    "SAP ABAP",
-                                    "Spring Boot",
                                     "FastAPI",
-                                    "JSON",
-                                    "RabbitMQ",
+                                    "React",
+                                    "Vite",
+                                    "Tailwind CSS",
                                     "MySQL",
                                     "PostgreSQL",
                                     "Redis",
@@ -220,14 +219,13 @@ export default function ChatArea({
                                 <div>
 
                                     <h4 className="font-semibold text-gray-800">
-                                        Library Management System
+                                        Candidate AI
                                     </h4>
 
                                     <p className="text-sm text-gray-600 mt-1">
-                                        Spring Boot, Spring Security, JWT and MySQL.
-                                        Secure RESTful system with role-based
-                                        authorization, DTO validation and BCrypt
-                                        password encryption.
+                                        React, FastAPI, Python, Groq and Tailwind CSS. 
+                                        AI-powered candidate representative with conversational profile Q&A, job matching, 
+                                        interview assistance and structured project/skills visualization.
                                     </p>
 
                                 </div>

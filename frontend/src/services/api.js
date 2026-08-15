@@ -59,15 +59,7 @@ export async function streamQuestion(question, onChunk) {
 
         if (!chunk) continue;
 
-        for (const character of chunk) {
-
-            onChunk(character);
-
-            await new Promise((resolve) =>
-                setTimeout(resolve, 20)
-            );
-
-        }
+        onChunk(chunk);
     }
 }
 
