@@ -19,31 +19,33 @@
     "programming_languages": [
       "Java",
       "Python",
-      "JavaScript",
       "SQL"
     ],
     "frameworks": [
-      "Spring Boot",
+      "Django",
+      "Django REST Framework",
       "React",
+      "Vite",
       "FastAPI",
-      "Django"
+      "Tailwind CSS"
     ],
     "databases": [
       "MySQL",
-      "PostgreSQL"
+      "PostgreSQL",
+      "Redis"
     ],
     "tools": [
       "Git",
       "GitHub",
       "Docker",
-      "VS Code",
-      "IntelliJ IDEA",
+      "Vercel",
+      "Render",
       "Postman"
     ],
     "core_subjects": [
       "Data Structures and Algorithms",
       "Object-Oriented Programming",
-      "DBMS",
+      "REST APIs",
       "Operating Systems",
       "Computer Networks"
     ]
@@ -70,19 +72,23 @@
   ],
   "projects": [
     {
-        "name": "Expense Tracker",
-        "description": "Desktop application to manage personal income and expenses.",
+        "name": "Candidate AI",
+        "description": "AI-powered candidate representative that allows recruiters and interviewers to interact with a candidate's professional profile.",
         "technologies": [
-            "Java",
-            "JavaFX",
-            "MySQL"
+            "Python",
+            "FastAPI",
+            "React",
+            "Groq"
         ],
         "features": [
-            "Add/Edit/Delete Transactions",
-            "Category Management",
-            "Database Integration"
+            "Profile Q&A",
+            "Job Description Matching",
+            "Interview Question Generation",
+            "Candidate Suitability Analysis",
+            "Streaming AI Responses",
+            "Project and Skills Cards"
         ],
-        "github": "https://github.com/Divyansh00000001/Expense-Tracker"
+        "github": "https://github.com/Divyansh00000001/Candidate-AI"
     },
     {
         "name": "URL Shortener",
